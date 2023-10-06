@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      background-color: rgb(64, 58, 58);
+      display: flex;
+      border: 2px solid black;
+      height: 400px;
+      width: 500px;
+      align-items: end;
+      padding-left: 10px;
+      gap: 10px;
+      margin: 5px;
+      overflow: hidden;
+      border-bottom: 10px solid black;
+      text-align: center;
+      border: 10px solid lightcoral;
+    }
+
+    .box {
+      box-sizing: border-box;
+      position: relative;
+      width: 50px;
+      height: 90px;
+      background-color: rgb(220, 142, 40);
+      box-shadow: 2px 2px 20px black;
+    }
+
+    .block {
+      position: relative;
+      left: 420px;
+      width: 30px;
+      height: 40px;
+      background-color: red;
+      box-shadow: 2px 2px 20px black;
+    }
+
+    .blockAn {
+      animation: block 2s linear 0.5s infinite;
+    }
+
+    .jumpAn {
+      animation: animation 0.4s 2 alternate;
+    }
+
+    @keyframes animation {
+      from {
+        bottom: 0px;
+        transform: scaleY(0.4);
+      }
+
+      to {
+        bottom: 200px;
+        transform: scaleY(1);
+      }
+    }
+
+    @keyframes block {
+      from {
+        left: 450px;
+      }
+      to {
+        left: -300px;
+      }
+    }
+    @media (max-width: 900px) {
+      .container {
+        width: 100%;
+        height: 90vh;
+        padding-left: 10%;
+      }
+    }
+    button {
+      background-color: rgb(77, 77, 196);
+      color: white;
+      padding: 5px;
+      width: 50px;
+      font-size: large;
+      margin-left: 5px;
+    }
+
+    .score {
+      position: absolute;
+      top: 20px;
+      font-size: 2rem;
+      color: rgb(47, 247, 120);
+      font-weight: bold;
+      padding: 5px;
+      max-width: 450px;
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <div class="score">Box Jump Game</div>
+      <div class="box"></div>
+      <div class="block"></div>
+    </div>
+    <!-- <button class="jump"> Click to Start</button> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
